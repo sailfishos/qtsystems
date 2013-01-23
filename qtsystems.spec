@@ -1,7 +1,7 @@
-%define _qtmodule_snapshot_version 5.0.0-beta1
+%define _qtmodule_snapshot_version 0.0-git672.g2dbaae64ccd0fa3646d68d77cbc9baac7d3bde2e
 Name:       qt5-qtsystems
 Summary:    Qt System modules
-Version:    5.0.0~beta1
+Version:    0.0~git672.g2dbaae64ccd0fa3646d68d77cbc9baac7d3bde2e
 Release:    1%{?dist}
 Group:      System/Libraries
 License:    LGPLv2.1 with exception or GPLv3
@@ -188,62 +188,62 @@ rm -rf %{buildroot}/%{_includedir}/qt5/Qt
 
 %files -n qt5-qtsysteminfo
 %defattr(-,root,root,-)
-%{_libdir}/libQtSystemInfo.so.5
-%{_libdir}/libQtSystemInfo.so.5.*
+%{_libdir}/libQt5SystemInfo.so.5
+%{_libdir}/libQt5SystemInfo.so.5.*
 %{_bindir}/*
 
 %files -n qt5-qtsysteminfo-devel
 %defattr(-,root,root,-)
-%{_libdir}/libQtSystemInfo.so
-%{_libdir}/libQtSystemInfo.prl
-%{_libdir}/pkgconfig/QtSystemInfo.pc
+%{_libdir}/libQt5SystemInfo.so
+%{_libdir}/libQt5SystemInfo.prl
+%{_libdir}/pkgconfig/Qt5SystemInfo.pc
 %{_includedir}/qt5/QtSystemInfo/
-%{_datadir}/qt5/mkspecs/modules/qt_systeminfo.pri
+%{_datadir}/qt5/mkspecs/modules/qt_lib_systeminfo.pri
 %{_libdir}/cmake/Qt5SystemInfo/
 
 %files -n qt5-qtdeclarative-systeminfo
 %defattr(-,root,root,-)
-%{_libdir}/qt5/imports/QtSystemInfo/
+%{_libdir}/qt5/qml/QtSystemInfo/
 
 %files -n qt5-qtserviceframework
 %defattr(-,root,root,-)
 %{_bindir}/servicefw
-%{_libdir}/libQtServiceFramework.so.5
-%{_libdir}/libQtServiceFramework.so.5.*
+%{_libdir}/libQt5ServiceFramework.so.5
+%{_libdir}/libQt5ServiceFramework.so.5.*
 
 %files -n qt5-qtserviceframework-devel
 %defattr(-,root,root,-)
-%{_libdir}/libQtServiceFramework.so
-%{_libdir}/libQtServiceFramework.prl
-%{_libdir}/pkgconfig/QtServiceFramework.pc
+%{_libdir}/libQt5ServiceFramework.so
+%{_libdir}/libQt5ServiceFramework.prl
+%{_libdir}/pkgconfig/Qt5ServiceFramework.pc
 %{_includedir}/qt5/QtServiceFramework/
-%{_datadir}/qt5/mkspecs/modules/qt_serviceframework.pri
+%{_datadir}/qt5/mkspecs/modules/qt_lib_serviceframework.pri
 %{_libdir}/cmake/Qt5ServiceFramework/
 
 %files -n qt5-qtdeclarative-serviceframework
 %defattr(-,root,root,-)
-%{_libdir}/qt5/imports/QtServiceFramework/
+%{_libdir}/qt5/qml/QtServiceFramework/
 
 
 
 
 %files -n qt5-qtpublishsubscribe
 %defattr(-,root,root,-)
-%{_libdir}/libQtPublishSubscribe.so.5
-%{_libdir}/libQtPublishSubscribe.so.5.*
+%{_libdir}/libQt5PublishSubscribe.so.5
+%{_libdir}/libQt5PublishSubscribe.so.5.*
 
 %files -n qt5-qtpublishsubscribe-devel
 %defattr(-,root,root,-)
-%{_libdir}/libQtPublishSubscribe.so
-%{_libdir}/libQtPublishSubscribe.prl
-%{_libdir}/pkgconfig/QtPublishSubscribe.pc
+%{_libdir}/libQt5PublishSubscribe.so
+%{_libdir}/libQt5PublishSubscribe.prl
+%{_libdir}/pkgconfig/Qt5PublishSubscribe.pc
 %{_includedir}/qt5/QtPublishSubscribe/
-%{_datadir}/qt5/mkspecs/modules/qt_publishsubscribe.pri
+%{_datadir}/qt5/mkspecs/modules/qt_lib_publishsubscribe.pri
 %{_libdir}/cmake/Qt5PublishSubscribe/
 
 %files -n qt5-qtdeclarative-publishsubscribe
 %defattr(-,root,root,-)
-%{_libdir}/qt5/imports/QtPublishSubscribe/
+%{_libdir}/qt5/qml/QtPublishSubscribe/
 
 
 #### No changelog section, separate $pkg.changes contains the history
