@@ -146,7 +146,7 @@ This package contains the PublishSuvbscribe import for QtDeclarative
 
 %build
 export QTDIR=/usr/share/qt5
-qmake
+qmake -qt=5
 make %{?_smp_flags}
 
 %install
@@ -190,7 +190,7 @@ rm -rf %{buildroot}/%{_includedir}/qt5/Qt
 %defattr(-,root,root,-)
 %{_libdir}/libQt5SystemInfo.so.5
 %{_libdir}/libQt5SystemInfo.so.5.*
-%{_bindir}/*
+%{_qt5_bindir}/*
 
 %files -n qt5-qtsysteminfo-devel
 %defattr(-,root,root,-)
@@ -207,7 +207,7 @@ rm -rf %{buildroot}/%{_includedir}/qt5/Qt
 
 %files -n qt5-qtserviceframework
 %defattr(-,root,root,-)
-%{_bindir}/servicefw
+%{_qt5_bindir}/servicefw
 %{_libdir}/libQt5ServiceFramework.so.5
 %{_libdir}/libQt5ServiceFramework.so.5.*
 
