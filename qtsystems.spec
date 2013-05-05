@@ -1,7 +1,7 @@
-%define _qtmodule_snapshot_version 0.0-git672.g2dbaae64ccd0fa3646d68d77cbc9baac7d3bde2e
+%define _qtmodule_snapshot_version 0.0~git682.701442a
 Name:       qt5-qtsystems
 Summary:    Qt System modules
-Version:    0.0~git672.g2dbaae64ccd0fa3646d68d77cbc9baac7d3bde2e
+Version:    0.0~git682.701442a
 Release:    1%{?dist}
 Group:      System/Libraries
 License:    LGPLv2.1 with exception or GPLv3
@@ -188,15 +188,15 @@ rm -rf %{buildroot}/%{_includedir}/qt5/Qt
 
 %files -n qt5-qtsysteminfo
 %defattr(-,root,root,-)
-%{_libdir}/libQt5SystemInfo.so.5
-%{_libdir}/libQt5SystemInfo.so.5.*
+%{_libdir}/libQt0SystemInfo.so.0
+%{_libdir}/libQt0SystemInfo.so.0.*
 %{_qt5_bindir}/*
 
 %files -n qt5-qtsysteminfo-devel
 %defattr(-,root,root,-)
-%{_libdir}/libQt5SystemInfo.so
-%{_libdir}/libQt5SystemInfo.prl
-%{_libdir}/pkgconfig/Qt5SystemInfo.pc
+%{_libdir}/libQt0SystemInfo.so
+%{_libdir}/libQt0SystemInfo.prl
+%{_libdir}/pkgconfig/Qt0SystemInfo.pc
 %{_includedir}/qt5/QtSystemInfo/
 %{_datadir}/qt5/mkspecs/modules/qt_lib_systeminfo.pri
 %{_libdir}/cmake/Qt5SystemInfo/
@@ -208,14 +208,14 @@ rm -rf %{buildroot}/%{_includedir}/qt5/Qt
 %files -n qt5-qtserviceframework
 %defattr(-,root,root,-)
 %{_qt5_bindir}/servicefw
-%{_libdir}/libQt5ServiceFramework.so.5
-%{_libdir}/libQt5ServiceFramework.so.5.*
+%{_libdir}/libQt0ServiceFramework.so.0
+%{_libdir}/libQt0ServiceFramework.so.0.*
 
 %files -n qt5-qtserviceframework-devel
 %defattr(-,root,root,-)
-%{_libdir}/libQt5ServiceFramework.so
-%{_libdir}/libQt5ServiceFramework.prl
-%{_libdir}/pkgconfig/Qt5ServiceFramework.pc
+%{_libdir}/libQt0ServiceFramework.so
+%{_libdir}/libQt0ServiceFramework.prl
+%{_libdir}/pkgconfig/Qt0ServiceFramework.pc
 %{_includedir}/qt5/QtServiceFramework/
 %{_datadir}/qt5/mkspecs/modules/qt_lib_serviceframework.pri
 %{_libdir}/cmake/Qt5ServiceFramework/
@@ -229,14 +229,14 @@ rm -rf %{buildroot}/%{_includedir}/qt5/Qt
 
 %files -n qt5-qtpublishsubscribe
 %defattr(-,root,root,-)
-%{_libdir}/libQt5PublishSubscribe.so.5
-%{_libdir}/libQt5PublishSubscribe.so.5.*
+%{_libdir}/libQt0PublishSubscribe.so.0
+%{_libdir}/libQt0PublishSubscribe.so.0.*
 
 %files -n qt5-qtpublishsubscribe-devel
 %defattr(-,root,root,-)
-%{_libdir}/libQt5PublishSubscribe.so
-%{_libdir}/libQt5PublishSubscribe.prl
-%{_libdir}/pkgconfig/Qt5PublishSubscribe.pc
+%{_libdir}/libQt0PublishSubscribe.so
+%{_libdir}/libQt0PublishSubscribe.prl
+%{_libdir}/pkgconfig/Qt0PublishSubscribe.pc
 %{_includedir}/qt5/QtPublishSubscribe/
 %{_datadir}/qt5/mkspecs/modules/qt_lib_publishsubscribe.pri
 %{_libdir}/cmake/Qt5PublishSubscribe/

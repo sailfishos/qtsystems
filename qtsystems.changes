@@ -1,3 +1,6 @@
+* Sat May 05 2013 Carsten Munk <carsten.munk@jollamobile.com> - 0.0~git682.701442a
+- Upgrade to git682.701442
+
 * Fri Apr 05 2013 Carsten Munk <carsten.munk@jollamobile.com> - 0.0~git672.g2dbaae64ccd0fa3646d68d77cbc9baac7d3bde2e
 - Use -qt=5
 
