@@ -193,7 +193,6 @@ find %{buildroot}%{_libdir} -type f -name '*.prl' \
 %defattr(-,root,root,-)
 %{_libdir}/libQt5SystemInfo.so.5
 %{_libdir}/libQt5SystemInfo.so.5.*
-%{_qt5_bindir}/*
 
 %files -n qt5-qtsysteminfo-devel
 %defattr(-,root,root,-)
@@ -212,6 +211,7 @@ find %{buildroot}%{_libdir} -type f -name '*.prl' \
 %files -n qt5-qtserviceframework
 %defattr(-,root,root,-)
 %{_qt5_bindir}/servicefw
+%{_qt5_bindir}/sfwlisten
 %{_libdir}/libQt5ServiceFramework.so.5
 %{_libdir}/libQt5ServiceFramework.so.5.*
 
