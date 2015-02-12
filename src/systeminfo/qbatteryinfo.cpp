@@ -47,10 +47,12 @@
 #if defined(QT_SIMULATOR)
 #  include "simulator/qsysteminfo_simulator_p.h"
 #elif defined(Q_OS_LINUX)
-#if defined(QT_NO_UPOWER)
-#include "linux/qbatteryinfo_linux_p.h"
-#else
+#if defined(QT_UPOWER)
 #include "linux/qbatteryinfo_upower_p.h"
+#elif defined(QT_STATEFS)
+#include "linux/qbatteryinfo_statefs_p.h"
+#else
+#include "linux/qbatteryinfo_linux_p.h"
 #endif
 #elif defined(Q_OS_WIN)
 #  include "windows/qbatteryinfo_win_p.h"

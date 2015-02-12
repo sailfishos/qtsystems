@@ -98,15 +98,22 @@ linux-*: !simulator: {
             DEFINES += QT_NO_UDISKS
         }
         contains(CONFIG,upower): {
+            DEFINES += QT_UPOWER
             SOURCES += linux/qdevicekitservice_linux.cpp \
                        linux/qbatteryinfo_upower.cpp
             HEADERS += linux/qdevicekitservice_linux_p.h \
                        linux/qbatteryinfo_upower_p.h
         } else {
-            HEADERS += linux/qbatteryinfo_linux_p.h
-            SOURCES += linux/qbatteryinfo_linux.cpp
-
-            DEFINES += QT_NO_UPOWER
+            contains(CONFIG,statefs) {
+                DEFINES += QT_STATEFS
+                CONFIG += c++11 link_pkgconfig
+                PKGCONFIG += contextkit-statefs
+                HEADERS += linux/qbatteryinfo_statefs_p.h
+                SOURCES += linux/qbatteryinfo_statefs.cpp
+            } else {
+                HEADERS += linux/qbatteryinfo_linux_p.h
+                SOURCES += linux/qbatteryinfo_linux.cpp
+            }
         }
 
         # SSU tool for Nemo Mobile, see https://github.com/nemomobile/ssu
@@ -116,9 +123,17 @@ linux-*: !simulator: {
         }
 
     } else {
-        DEFINES += QT_NO_OFONO QT_NO_UDISKS QT_NO_UPOWER
-        HEADERS += linux/qbatteryinfo_linux_p.h
-        SOURCES += linux/qbatteryinfo_linux.cpp
+        contains(CONFIG,statefs) {
+            DEFINES += QT_STATEFS
+            CONFIG += c++11 link_pkgconfig
+            PKGCONFIG += contextkit-statefs
+            HEADERS += linux/qbatteryinfo_statefs_p.h
+            SOURCES += linux/qbatteryinfo_statefs.cpp
+        } else {
+            DEFINES += QT_NO_OFONO QT_NO_UDISKS
+            HEADERS += linux/qbatteryinfo_linux_p.h
+            SOURCES += linux/qbatteryinfo_linux.cpp
+        }
     }
 
     config_udev {
