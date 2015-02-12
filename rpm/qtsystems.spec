@@ -20,6 +20,7 @@ BuildRequires:  qt5-qmake
 BuildRequires:  fdupes
 BuildRequires:  pkgconfig(libudev)
 BuildRequires:  pkgconfig(bluez)
+BuildRequires:  pkgconfig(contextkit-statefs)
 BuildRequires:  ssu-devel
 
 %description
@@ -33,6 +34,7 @@ This package contains the Qt system modules
 %package -n qt5-qtsysteminfo
 Summary:    Qt system info
 Group:      System/Libraries
+Requires: statefs-provider-power >= 0.2.68
 Requires(post):     /sbin/ldconfig
 Requires(postun):   /sbin/ldconfig
 
@@ -144,7 +146,7 @@ This package contains the PublishSuvbscribe import for QtDeclarative
 %build
 export QTDIR=/usr/share/qt5
 touch .git
-%qmake5 CONFIG+=ofono CONFIG+=nox11option CONFIG+=upower CONFIG+=ssu
+%qmake5 CONFIG+=ofono CONFIG+=nox11option CONFIG+=statefs CONFIG+=ssu
 make %{?_smp_mflags}
 
 %install
