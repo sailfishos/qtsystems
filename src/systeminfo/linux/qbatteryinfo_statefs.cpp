@@ -132,7 +132,7 @@ void QBatteryInfoPrivate::init()
         auto const &name = info.first;
         auto target = info.second;
 
-        auto property = new ContextProperty(name);
+        auto property = new ContextProperty(name, this);
         properties_.push_back(property);
         if (target)
             connect(property, &ContextProperty::valueChanged, this, target);
