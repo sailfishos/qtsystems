@@ -4,16 +4,16 @@ QPRO_PWD = $PWD
 QT = core network
 PUBLIC_HEADERS = qsysteminfoglobal.h \
                  qdeviceinfo.h \
-                 qstorageinfo.h \
                  qscreensaver.h \
                  qbatteryinfo.h \
                  qnetworkinfo.h
+#                 qstorageinfo.h \
 
 SOURCES += qdeviceinfo.cpp \
-           qstorageinfo.cpp \
            qscreensaver.cpp \
            qbatteryinfo.cpp \
            qnetworkinfo.cpp
+#           qstorageinfo.cpp \
 
 win32: !simulator: {
     contains(CONFIG, release) {
@@ -60,14 +60,14 @@ win32: !simulator: {
 
 linux-*: !simulator: {
     PRIVATE_HEADERS += linux/qdeviceinfo_linux_p.h \
-                       linux/qstorageinfo_linux_p.h \
                        linux/qnetworkinfo_linux_p.h \
                        linux/qscreensaver_linux_p.h
+#                       linux/qstorageinfo_linux_p.h \
 
     SOURCES += linux/qdeviceinfo_linux.cpp \
-               linux/qstorageinfo_linux.cpp \
                linux/qnetworkinfo_linux.cpp \
                linux/qscreensaver_linux.cpp
+#               linux/qstorageinfo_linux.cpp \
 
     x11|config_x11: !contains(CONFIG,nox11option) {
         CONFIG += link_pkgconfig
@@ -194,11 +194,11 @@ simulator {
     linux-*: {
         PRIVATE_HEADERS += \
                            linux/qscreensaver_linux_p.h \
-                           linux/qstorageinfo_linux_p.h
+#                           linux/qstorageinfo_linux_p.h
 
         SOURCES += \
                    linux/qscreensaver_linux.cpp \
-                   linux/qstorageinfo_linux.cpp
+#                   linux/qstorageinfo_linux.cpp
 
         x11|config_x11 {
             CONFIG += link_pkgconfig
