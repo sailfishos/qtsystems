@@ -19,7 +19,6 @@ BuildRequires:  qt5-qtdeclarative-qtquick-devel
 BuildRequires:  qt5-qmake
 BuildRequires:  fdupes
 BuildRequires:  pkgconfig(libudev)
-BuildRequires:  pkgconfig(bluez)
 BuildRequires:  pkgconfig(contextkit-statefs)
 BuildRequires:  ssu-devel
 
@@ -146,7 +145,7 @@ This package contains the PublishSuvbscribe import for QtDeclarative
 %build
 export QTDIR=/usr/share/qt5
 touch .git
-%qmake5 CONFIG+=ofono CONFIG+=nox11option CONFIG+=statefs CONFIG+=ssu
+%qmake5 CONFIG+=ofono CONFIG+=nox11option CONFIG+=statefs CONFIG+=ssu CONFIG-=bluez
 make %{?_smp_mflags}
 
 %install
