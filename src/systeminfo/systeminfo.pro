@@ -76,7 +76,7 @@ linux-*: !simulator: {
         DEFINES += QT_NO_X11
     }
 
-    config_bluez {
+    config_bluez: contains(CONFIG,bluez) {
         CONFIG += link_pkgconfig
         PKGCONFIG += bluez
     } else: {
