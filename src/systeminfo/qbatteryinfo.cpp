@@ -51,6 +51,8 @@
 #include "linux/qbatteryinfo_upower_p.h"
 #elif defined(QT_STATEFS)
 #include "linux/qbatteryinfo_statefs_p.h"
+#elif defined(QT_BATTERY_MCE)
+#include "linux/qbatteryinfo_mce_p.h"
 #else
 #include "linux/qbatteryinfo_linux_p.h"
 #endif
