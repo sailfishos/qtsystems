@@ -111,8 +111,16 @@ linux-*: !simulator: {
                 HEADERS += linux/qbatteryinfo_statefs_p.h
                 SOURCES += linux/qbatteryinfo_statefs.cpp
             } else {
-                HEADERS += linux/qbatteryinfo_linux_p.h
-                SOURCES += linux/qbatteryinfo_linux.cpp
+                contains(CONFIG,battery_mce) {
+                    DEFINES   += QT_BATTERY_MCE
+                    CONFIG    += link_pkgconfig
+                    PKGCONFIG += mce-qt5
+                    HEADERS   += linux/qbatteryinfo_mce_p.h
+                    SOURCES   += linux/qbatteryinfo_mce.cpp
+                } else {
+                    HEADERS += linux/qbatteryinfo_linux_p.h
+                    SOURCES += linux/qbatteryinfo_linux.cpp
+                }
             }
         }
 
@@ -130,9 +138,17 @@ linux-*: !simulator: {
             HEADERS += linux/qbatteryinfo_statefs_p.h
             SOURCES += linux/qbatteryinfo_statefs.cpp
         } else {
-            DEFINES += QT_NO_OFONO QT_NO_UDISKS
-            HEADERS += linux/qbatteryinfo_linux_p.h
-            SOURCES += linux/qbatteryinfo_linux.cpp
+            contains(CONFIG,battery_mce) {
+                DEFINES   += QT_BATTERY_MCE
+                CONFIG    += link_pkgconfig
+                PKGCONFIG += mce-qt5
+                HEADERS   += linux/qbatteryinfo_mce_p.h
+                SOURCES   += linux/qbatteryinfo_mce.cpp
+            } else {
+                DEFINES += QT_NO_OFONO QT_NO_UDISKS
+                HEADERS += linux/qbatteryinfo_linux_p.h
+                SOURCES += linux/qbatteryinfo_linux.cpp
+            }
         }
     }
 
