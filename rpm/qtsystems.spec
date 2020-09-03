@@ -6,21 +6,21 @@ Group:      System/Libraries
 License:    LGPLv2.1 with exception or GPLv3
 URL:        http://qt.nokia.com
 Source0:    %{name}-%{version}.tar.bz2
-BuildRequires:  qt5-qtcore-devel
-BuildRequires:  qt5-qtgui-devel
-BuildRequires:  qt5-qtnetwork-devel
-BuildRequires:  qt5-qtsql-devel
-BuildRequires:  qt5-qtdbus-devel
-BuildRequires:  qt5-qtxml-devel
-BuildRequires:  qt5-qttest-devel
-BuildRequires:  qt5-qtopengl-devel
-BuildRequires:  qt5-qtdeclarative-devel
-BuildRequires:  qt5-qtdeclarative-qtquick-devel
+BuildRequires:  pkgconfig(Qt5Core)
+BuildRequires:  pkgconfig(Qt5Gui)
+BuildRequires:  pkgconfig(Qt5Network)
+BuildRequires:  pkgconfig(Qt5Sql)
+BuildRequires:  pkgconfig(Qt5DBus)
+BuildRequires:  pkgconfig(Qt5Xml)
+BuildRequires:  pkgconfig(Qt5Test)
+BuildRequires:  pkgconfig(Qt5OpenGL)
+BuildRequires:  pkgconfig(Qt5Qml)
+BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  qt5-qmake
 BuildRequires:  fdupes
 BuildRequires:  pkgconfig(libudev)
 BuildRequires:  pkgconfig(mce-qt5) >= 1.3.0
-BuildRequires:  ssu-devel
+BuildRequires:  pkgconfig(ssu)
 
 %description
 Qt is a cross-platform application and UI framework. Using Qt, you can
