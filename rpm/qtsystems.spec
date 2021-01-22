@@ -1,10 +1,9 @@
 Name:       qt5-qtsystems
 Summary:    Qt System modules
-Version:    0.0git682.701442a
+Version:    5.2.0
 Release:    1%{?dist}
-Group:      System/Libraries
-License:    LGPLv2.1 with exception or GPLv3
-URL:        http://qt.nokia.com
+License:    LGPLv2 with exception or GPLv3 or Qt Commercial
+URL:        https://www.qt.io
 Source0:    %{name}-%{version}.tar.bz2
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Gui)
@@ -32,7 +31,6 @@ This package contains the Qt system modules
 
 %package -n qt5-qtsysteminfo
 Summary:    Qt system info
-Group:      System/Libraries
 Requires(post):     /sbin/ldconfig
 Requires(postun):   /sbin/ldconfig
 
@@ -46,7 +44,6 @@ This package contains the Qt SystemInfo module
 
 %package -n qt5-qtsysteminfo-devel
 Summary:    Qt system info - development files
-Group:      Development/Libraries
 Requires:   qt5-qtsysteminfo = %{version}-%{release}
 
 %description -n qt5-qtsysteminfo-devel
@@ -59,7 +56,6 @@ This package contains the Qt SystemInfo development files
 
 %package -n qt5-qtdeclarative-systeminfo
 Summary:    Qt system info import for QtDeclarative
-Group:      System/Libraries
 Requires:   qt5-qtdeclarative
 
 %description -n qt5-qtdeclarative-systeminfo
@@ -68,7 +64,6 @@ This package contains the system info import for QtDeclarative
 
 %package -n qt5-qtserviceframework
 Summary:    Qt Service Framework
-Group:      System/Libraries
 Requires(post):     /sbin/ldconfig
 Requires(postun):   /sbin/ldconfig
 
@@ -81,7 +76,6 @@ This package contains the Qt Service Framework module
 
 %package -n qt5-qtserviceframework-devel
 Summary:    Qt Service Framework - development files
-Group:      Development/Libraries
 Requires:   qt5-qtserviceframework = %{version}-%{release}
 
 %description -n qt5-qtserviceframework-devel
@@ -94,7 +88,6 @@ This package contains the Qt Service Framework development files
 
 %package -n qt5-qtdeclarative-serviceframework
 Summary:    Qt Service Framework import for QtDeclarative
-Group:      System/Libraries
 Requires:   qt5-qtdeclarative
 
 %description -n qt5-qtdeclarative-serviceframework
@@ -104,7 +97,6 @@ This package contains the Service Framework import for QtDeclarative
 
 %package -n qt5-qtpublishsubscribe
 Summary:    Qt PublishSubscribe module
-Group:      System/Libraries
 Requires(post):     /sbin/ldconfig
 Requires(postun):   /sbin/ldconfig
 
@@ -117,7 +109,6 @@ This package contains the Qt PublishSubscribe module
 
 %package -n qt5-qtpublishsubscribe-devel
 Summary:    Qt PublishSubscribe - development files
-Group:      Development/Libraries
 Requires:   qt5-qtpublishsubscribe = %{version}-%{release}
 
 %description -n qt5-qtpublishsubscribe-devel
@@ -130,7 +121,6 @@ This package contains the Qt PublishSubscribe development files
 
 %package -n qt5-qtdeclarative-publishsubscribe
 Summary:    Qt PublishSubscribe import for QtDeclarative
-Group:      System/Libraries
 Requires:   qt5-qtdeclarative
 
 %description -n qt5-qtdeclarative-publishsubscribe
@@ -191,6 +181,9 @@ find %{buildroot}%{_libdir} -type f -name '*.prl' \
 
 %files -n qt5-qtsysteminfo
 %defattr(-,root,root,-)
+%license LICENSE.LGPL
+%license LICENSE.GPL
+%license LGPL_EXCEPTION.txt
 %{_libdir}/libQt5SystemInfo.so.5
 %{_libdir}/libQt5SystemInfo.so.5.*
 
@@ -210,6 +203,9 @@ find %{buildroot}%{_libdir} -type f -name '*.prl' \
 
 %files -n qt5-qtserviceframework
 %defattr(-,root,root,-)
+%license LICENSE.LGPL
+%license LICENSE.GPL
+%license LGPL_EXCEPTION.txt
 %{_qt5_bindir}/servicefw
 %{_qt5_bindir}/sfwlisten
 %{_libdir}/libQt5ServiceFramework.so.5
@@ -234,6 +230,9 @@ find %{buildroot}%{_libdir} -type f -name '*.prl' \
 
 %files -n qt5-qtpublishsubscribe
 %defattr(-,root,root,-)
+%license LICENSE.LGPL
+%license LICENSE.GPL
+%license LGPL_EXCEPTION.txt
 %{_libdir}/libQt5PublishSubscribe.so.5
 %{_libdir}/libQt5PublishSubscribe.so.5.*
 
